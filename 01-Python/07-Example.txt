@@ -1,0 +1,12 @@
+Hello, this is a sample text file.
+This file is used for demonstrating file handling in Python.
+This is an additional line to be appended to the file.
+Hello, this is a sample text file.
+This file is used for demonstrating file handling in Python.
+This is an additional line to be appended to the file.
+Hello, this is a sample text file.
+This file is used for demonstrating file handling in Python.
+This is an additional line to be appended to the file.
+Hello, this is a sample text file.
+This file is used for demonstrating file handling in Python.
+This is an additional line to be appended to the file.
