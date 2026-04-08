@@ -47,7 +47,6 @@ def verify_number(user, user_input, random_number):
     else:
         print(" No match!")
 
-
 # Game loop
 while round < total_round:
     print(f"\n--- Round {round + 1} ---")
@@ -60,7 +59,6 @@ while round < total_round:
         verify_number(user, user_input, random_number)
 
     round += 1
-
 
 # Final scores
 print("\n Final Scores:")
