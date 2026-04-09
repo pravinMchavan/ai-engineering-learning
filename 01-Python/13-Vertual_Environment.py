@@ -17,3 +17,4 @@
 # 7. You can now install packages using pip, and they will be installed in the virtual environment rather than globally on your system.
 # 8. To deactivate the virtual environment and return to the global Python environment, simply run the command `deactivate`.
 
+# pip freeze > requirements.txt # this command is used to create a requirements.txt file that lists all the installed packages and their versions in the current virtual environment. This file can be used to recreate the same environment on another machine or share it with others.
