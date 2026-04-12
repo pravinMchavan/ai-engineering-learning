@@ -1,0 +1,152 @@
+DERIVATIVES FROM SCRATCH
+
+This lesson covers calculus concepts essential for machine learning:
+1. Derivatives
+2. Partial Derivatives
+3. Introduction to Gradient
+4. Chain Rule of Derivatives
+
+The Python file creates this graphic file:
+02-Derivatives-diagrams.svg
+
+1. WHAT IS A DERIVATIVE?
+A derivative measures how a function changes as its input changes.
+It represents the instantaneous rate of change or slope of the tangent line.
+
+For a function f(x), the derivative is denoted as f'(x) or df/dx.
+
+Example:
+f(x) = x^2
+f'(x) = 2x
+
+At x = 3, f'(3) = 6, meaning the slope is 6.
+
+Text diagram:
+f(x) = x^2
+
+      ^
+      |
+  f(3)=9 * (3,9)
+      |  \
+      |   \
+      |    \
+      |     \
+------O------* tangent at x=3, slope=6
+      |
+      v
+
+O is x=0
+
+
+2. HOW TO CALCULATE DERIVATIVES
+Basic rules:
+
+1. Power rule: d/dx(x^n) = n*x^(n-1)
+Example: d/dx(x^2) = 2x
+
+2. Constant rule: d/dx(c) = 0
+Example: d/dx(5) = 0
+
+3. Sum rule: d/dx(f + g) = f' + g'
+Example: d/dx(x^2 + 3x) = 2x + 3
+
+4. Product rule: d/dx(f*g) = f'*g + f*g'
+Example: d/dx(x*sin(x)) = 1*sin(x) + x*cos(x)
+
+5. Quotient rule: d/dx(f/g) = (f'*g - f*g') / g^2
+Example: d/dx(x^2/x) = (2x*x - x^2*1)/x^2 = x^2/x^2 = 1
+
+
+3. PARTIAL DERIVATIVES
+For functions of multiple variables, partial derivatives measure change with respect to one variable while keeping others constant.
+
+For f(x,y) = x^2 + y^3
+∂f/∂x = 2x  (treat y as constant)
+∂f/∂y = 3y^2  (treat x as constant)
+
+Example:
+f(x,y) = x^2*y + 3x
+∂f/∂x = 2x*y + 3
+∂f/∂y = x^2
+
+Text diagram (3D surface):
+Imagine a hill where x and y are position, f is height.
+Partial derivative w.r.t x is slope in x-direction.
+Partial derivative w.r.t y is slope in y-direction.
+
+
+4. INTRODUCTION TO GRADIENT
+The gradient is a vector of all partial derivatives.
+It points in the direction of steepest ascent.
+
+For f(x,y), gradient ∇f = (∂f/∂x, ∂f/∂y)
+
+Example:
+f(x,y) = x^2 + y^2
+∇f = (2x, 2y)
+
+At (1,1), gradient = (2,2), pointing away from origin.
+
+Text diagram:
+Gradient vector at each point shows direction of increase.
+
+
+5. CHAIN RULE OF DERIVATIVES
+The chain rule allows differentiation of composite functions.
+
+If y = f(u) and u = g(x), then dy/dx = dy/du * du/dx
+
+Example:
+y = (x^2 + 1)^3
+Let u = x^2 + 1, y = u^3
+dy/dx = dy/du * du/dx = 3u^2 * 2x = 3(x^2 + 1)^2 * 2x
+
+For multiple variables:
+If z = f(x,y) and x = g(t), y = h(t)
+dz/dt = ∂z/∂x * dx/dt + ∂z/∂y * dy/dt
+
+Text diagram:
+x -> u -> y
+Chain: dx/du * du/dy
+
+
+6. WHY DERIVATIVES MATTER IN ML
+Derivatives are used in:
+- Gradient descent optimization
+- Backpropagation in neural networks
+- Computing slopes for linear regression
+- Understanding how models change with parameters
+
+Example:
+In linear regression, we minimize cost function J(θ) = (1/2m) Σ (h_θ(x_i) - y_i)^2
+Gradient descent: θ := θ - α * ∂J/∂θ
+
+
+7. GRAPHICAL DIAGRAMS
+When you run the Python file, it creates:
+02-Derivatives-diagrams.svg
+
+That graphic shows:
+- Function and its derivative
+- Partial derivatives on a surface
+- Gradient vectors
+- Chain rule illustration
+
+
+8. MEMORY TRICK
+Derivative = rate of change, slope
+Partial = derivative w.r.t one variable
+Gradient = vector of partials, direction of steepest ascent
+Chain rule = derivative of composite functions
+
+
+9. PRACTICE QUESTIONS
+1. Find d/dx(x^3)
+2. Find ∂f/∂x for f(x,y) = x*y + x^2
+3. What is the gradient of f(x,y) = x^2 + y^2?
+4. Apply chain rule to d/dx(sin(x^2))
+
+
+10. FINAL SUMMARY
+Derivatives measure change and are fundamental to optimization in ML.
+Master the chain rule for complex functions and gradients for multi-variable optimization.
