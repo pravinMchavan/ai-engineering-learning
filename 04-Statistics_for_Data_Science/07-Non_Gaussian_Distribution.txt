@@ -1,0 +1,111 @@
+Non-Gaussian Distribution
+
+Definition:
+A non-Gaussian distribution is any probability distribution that does not follow the normal (Gaussian) shape. These distributions can be skewed, heavy-tailed, multimodal, or otherwise different from the bell curve.
+
+Key Characteristics:
+- Not symmetric around the mean
+- Mean, median, and mode may differ
+- Can have heavier or lighter tails than a normal distribution
+- May be skewed to the left or right
+- Often arise in real-world data such as income, waiting times, or counts
+
+Common Non-Gaussian Distributions:
+1. Uniform Distribution
+   - Every value in a range is equally likely.
+   - Example: rolling a fair die.
+   - Shape: flat.
+
+2. Exponential Distribution
+   - Models time between events in a Poisson process.
+   - Example: time between arrivals at a bus stop.
+   - Shape: right-skewed, long tail.
+
+3. Poisson Distribution
+   - Models count of events in a fixed interval.
+   - Example: number of emails received per hour.
+   - Shape: discrete, can be skewed when the mean is small.
+
+4. Binomial Distribution
+   - Models the number of successes in a fixed number of independent trials.
+   - Example: number of heads in 10 coin flips.
+   - Shape: can be asymmetric when probability of success is not 0.5.
+
+5. Bimodal and Multimodal Distributions
+   - Have two or more peaks.
+   - Example: heights of a mixed male and female population.
+   - Shape: multiple modes rather than a single peak.
+
+   Detailed Explanation:
+   Bimodal distributions have exactly two peaks, while multimodal distributions have three or more. These arise when data comes from multiple distinct populations or processes. For instance, test scores from two different classes might show a bimodal distribution. Multimodal distributions can indicate complex underlying patterns, such as seasonal sales data with peaks in different months.
+
+   Importance:
+   Recognizing multimodal distributions helps avoid misinterpreting data as unimodal. It suggests the need for subgroup analysis or mixture models in statistical modeling.
+
+Skewed Distributions
+
+Definition:
+A skewed distribution is asymmetric, with a tail that extends further in one direction than the other. It can be positively skewed (right-skewed) or negatively skewed (left-skewed).
+
+Types:
+- Right-Skewed (Positive Skew): The tail extends to the right. Mean > Median > Mode.
+  - Example: Income distribution in a population.
+- Left-Skewed (Negative Skew): The tail extends to the left. Mean < Median < Mode.
+  - Example: Age at retirement.
+
+Formula for Skewness:
+Skewness = [Σ(xi - μ)³ / N] / σ³
+
+Where:
+- xi = data points
+- μ = mean
+- σ = standard deviation
+- N = number of data points
+
+Solved Example:
+Data: 1, 2, 3, 4, 10
+Mean = (1+2+3+4+10)/5 = 4
+Standard deviation ≈ 3.16
+Skewness calculation: Positive value indicates right-skewed.
+
+Explanation:
+Skewness measures the asymmetry of the distribution. A skewness of 0 indicates symmetry, positive values indicate right-skew, and negative values indicate left-skew.
+
+Heavy-Tailed Distributions
+
+Definition:
+A heavy-tailed distribution has tails that are heavier than those of a normal distribution, meaning extreme values (outliers) are more likely to occur. The probability of large deviations from the mean is higher than in light-tailed distributions.
+
+Key Characteristics:
+- Higher probability of extreme events.
+- Variance may be infinite or undefined.
+- Mean may exist, but higher moments may not.
+- Examples: Power-law distributions, Pareto distribution, Cauchy distribution.
+
+Formula (for Pareto Distribution as an example):
+P(X > x) = (x_min / x)^α for x ≥ x_min
+
+Where:
+- x_min = minimum value
+- α = shape parameter (tail index)
+
+Solved Example:
+In a Pareto distribution with x_min = 1 and α = 2, the probability of X > 10 is (1/10)^2 = 0.01.
+
+Explanation:
+Heavy-tailed distributions are important in fields like finance (stock returns), insurance (claim sizes), and network analysis (degree distributions). They challenge assumptions of normality and require robust statistical methods.
+
+Why Non-Gaussian Matters:
+- Many real-world data sets are not normally distributed.
+- Statistical methods that assume normality may give misleading results.
+- Understanding non-Gaussian behavior helps choose better models, such as exponential, Poisson, or non-parametric methods.
+
+Text-Based Illustration:
+
+Uniform:    [=====]
+Exponential: [*----->]
+Skewed right: [*--->    ]
+Bimodal: [*   *]
+
+Conclusion:
+Non-Gaussian distributions are important in statistics because they represent data patterns that differ from the idealized normal distribution. Recognizing these patterns helps in selecting appropriate analysis techniques and avoiding incorrect assumptions.
