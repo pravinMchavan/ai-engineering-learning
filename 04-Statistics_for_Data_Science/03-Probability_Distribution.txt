@@ -46,3 +46,69 @@ Key Probability Rules:
 Relationship to Random Variables:
 - A random variable has a probability distribution that gives probabilities for each possible value.
 - For a discrete random variable X, P(X = x) is the probability that X takes the value x.
+Probability Distribution Types
+
+1) Discrete Probability Distribution
+Definition:
+A discrete probability distribution describes the probabilities of outcomes for a discrete random variable.
+
+Function:
+- Probability Mass Function (PMF): gives the probability that a discrete random variable equals a specific value.
+- Notation: P(X = x) = f(x)
+
+Properties:
+- f(x) = 0 for all x
+- The sum of f(x) over all possible values equals 1
+
+Example:
+For a fair six-sided die, X = outcome, P(X = x) = 1/6 for x = 1,2,3,4,5,6.
+
+2) Continuous Probability Distribution
+Definition:
+A continuous probability distribution describes the probabilities of outcomes for a continuous random variable.
+
+Function:
+- Probability Density Function (PDF): describes the relative likelihood of a continuous random variable taking a value.
+- Notation: f(x) and probability over an interval is P(a = X = b) = ?_a^b f(x) dx
+
+Properties:
+- f(x) = 0 for all x
+- The total area under f(x) over all values equals 1
+- For a specific value x, P(X = x) = 0; probabilities are defined for intervals instead.
+
+Example:
+If heights are modeled by a continuous distribution, the PDF gives the relative likelihood of each height range.
+
+3) Common Discrete Distributions
+- Binomial distribution: number of successes in n independent trials.
+- Poisson distribution: count of events in a fixed interval when events occur at a constant average rate.
+
+4) Common Continuous Distributions
+- Uniform distribution: every value in a range is equally likely.
+- Normal distribution: bell-shaped distribution defined by mean and standard deviation.
+Empirical Rule
+
+Definition:
+The Empirical Rule describes how data are distributed in a normal (bell-shaped) distribution.
+
+Explanation:
+- It applies to data that are approximately normally distributed.
+- It gives approximate percentages of data within 1, 2, and 3 standard deviations of the mean.
+
+Rule:
+- About 68% of values fall within 1 standard deviation of the mean: � � s
+- About 95% of values fall within 2 standard deviations of the mean: � � 2s
+- About 99.7% of values fall within 3 standard deviations of the mean: � � 3s
+
+Solved Example:
+Suppose test scores are normally distributed with mean � = 80 and standard deviation s = 5.
+- 68% range: 80 � 5 ? 75 to 85
+- 95% range: 80 � 10 ? 70 to 90
+- 99.7% range: 80 � 15 ? 65 to 95
+
+Interpretation:
+This means about 68% of students score between 75 and 85, about 95% score between 70 and 90, and about 99.7% score between 65 and 95.
+
+When to use:
+- Use the Empirical Rule when the distribution is close to normal.
+- It is a quick way to estimate how much data lie near the mean.

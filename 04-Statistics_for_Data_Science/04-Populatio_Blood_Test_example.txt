@@ -1,0 +1,35 @@
+Population and Blood Test Example Using Probability
+
+Context:
+A population is the full group we want to study. A sample is a smaller subset taken from the population.
+
+Problem:
+A city has 10,000 people. A health survey finds that 1,200 people have high cholesterol. A blood test is randomly given to one person from the city.
+
+Probability Goal:
+Find the probability that the randomly selected person has high cholesterol.
+
+Solution:
+- Total population = 10,000 people
+- Number with high cholesterol = 1,200
+- Probability = favorable outcomes / total outcomes
+
+Formula:
+P(high cholesterol) = 1,200 / 10,000 = 0.12
+
+Interpretation:
+There is a 12% chance that a randomly selected person from the city has high cholesterol.
+
+Extended Example:
+If 50 people are randomly chosen for the blood test, the expected number with high cholesterol is:
+Expected count = 50 * 0.12 = 6 people
+
+Explanation:
+- This problem uses probability for a population event.
+- The probability is based on the known number of cases in the entire population.
+- In practice, if we do not know the full population, we use a sample and estimate the probability using sample proportions.
+
+Key Terms:
+- Population: the complete group (10,000 people)
+- Event: the selected person has high cholesterol
+- Probability: likelihood of the event happening
