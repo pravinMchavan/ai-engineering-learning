@@ -1,0 +1,64 @@
+Z-Score
+
+Definition:
+A Z-score (standard score) measures how many standard deviations a data point is from the mean of the distribution.
+
+Formula:
+Z = (X - μ) / σ
+
+Where:
+- X = the value being standardized
+- μ = the population mean
+- σ = the population standard deviation
+
+Solved Example:
+Data: 10, 12, 14, 16, 18
+Mean (μ) = (10 + 12 + 14 + 16 + 18) / 5 = 70 / 5 = 14
+Standard deviation (σ) = √[( (10-14)² + (12-14)² + (14-14)² + (16-14)² + (18-14)² ) / 5]
+= √[(16 + 4 + 0 + 4 + 16) / 5] = √(40 / 5) = √8 ≈ 2.83
+
+Z-score for X = 18:
+Z = (18 - 14) / 2.83 ≈ 1.41
+
+Explanation:
+A Z-score of 1.41 means the value 18 is about 1.41 standard deviations above the mean. Z-scores let you compare values from different distributions on the same standardized scale.
+
+Text-Based Graphical Representation:
+
+      |              *              |
+      |            *   *            |
+      |          *       *          |
+      |        *           *        |
+      |      *               *      |
+      |    *                   *    |
+      |  *                       *  |
+      | *          μ = 14          * |
+      |*                           *|
+------|-----------------------------|------
+     -2σ    -1σ    0    +1σ    +2σ
+
+In this text graph, the center (μ = 14) is the mean. The point X = 18 lies to the right of the mean near +1σ, showing a Z-score of about 1.41.
+
+Standard Normal Distribution
+
+Definition:
+The standard normal distribution is a normal distribution with a mean of 0 and a standard deviation of 1. It is also called the Z-distribution.
+
+Properties:
+- Mean = 0
+- Standard deviation = 1
+- Symmetric around 0
+- Total area under the curve = 1
+- Z-scores correspond directly to positions on this curve
+
+Formula:
+φ(z) = (1 / √(2π)) × e^{-(z² / 2)}
+
+Interpretation:
+A value of Z = 0 is at the mean. Positive Z-scores lie to the right of the mean, and negative Z-scores lie to the left. Standard normal tables or calculators give probabilities for values of Z.
+
+Example:
+If Z = 1.0, the probability of a value being less than 1.0 is about 0.8413. If Z = -1.0, the probability of a value being less than -1.0 is about 0.1587.
+
+Connection to Z-score:
+Any normal distribution can be converted to the standard normal distribution using a Z-score. This allows comparison across different normal distributions by standardizing values to the same scale.
