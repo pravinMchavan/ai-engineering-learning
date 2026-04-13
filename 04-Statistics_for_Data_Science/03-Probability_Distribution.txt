@@ -1,0 +1,48 @@
+Random Variable
+
+Definition:
+A random variable is a function that assigns a numerical value to each possible outcome of a random experiment.
+
+Explanation:
+- A random variable converts outcomes from a random process into numbers.
+- It is not a variable that we choose; it is defined by the process and its possible outcomes.
+- There are two main types of random variables:
+  * Discrete random variable: has countable outcomes (like 0, 1, 2, ...).
+  * Continuous random variable: has infinitely many values in a range.
+
+Examples:
+- Rolling a fair six-sided die: the random variable X = outcome {1, 2, 3, 4, 5, 6}.
+- Counting the number of heads in 3 coin flips: Y = 0, 1, 2, or 3.
+- Measuring the height of a randomly selected student: Z can be any value in a range.
+
+Probability
+
+Definition:
+Probability is the measure of how likely an event is to happen. It is a number between 0 and 1, where 0 means impossible and 1 means certain.
+
+Explanation:
+- Probability describes the chance of an event in a random experiment.
+- For equally likely outcomes, probability = (number of favorable outcomes) / (total number of outcomes).
+- The sum of probabilities of all possible outcomes of a random variable is 1.
+
+Formula:
+P(E) = number of favorable outcomes / total number of possible outcomes
+
+Solved Example 1:
+Problem: What is the probability of rolling a 4 on a fair six-sided die?
+Solution: favorable outcome = {4}, total outcomes = {1,2,3,4,5,6}
+P(rolling 4) = 1 / 6 � 0.1667
+
+Solved Example 2:
+Problem: What is the probability of drawing an Ace from a standard 52-card deck?
+Solution: favorable outcomes = 4 Aces, total outcomes = 52 cards
+P(drawing an Ace) = 4 / 52 = 1 / 13 � 0.0769
+
+Key Probability Rules:
+- 0 = P(E) = 1
+- P(Sample Space) = 1
+- P(Not E) = 1 - P(E)
+
+Relationship to Random Variables:
+- A random variable has a probability distribution that gives probabilities for each possible value.
+- For a discrete random variable X, P(X = x) is the probability that X takes the value x.

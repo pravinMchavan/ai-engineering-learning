@@ -1,0 +1,68 @@
+Mean, Median, and Mode
+
+1) Mean
+Definition:
+The mean is the arithmetic average of a data set. It is found by adding all values and dividing by the number of values.
+
+Formula:
+Mean (\bar{x}) = (x_1 + x_2 + ... + x_n) / n
+
+Solved Example:
+Data: 5, 8, 12, 15, 20
+Sum = 5 + 8 + 12 + 15 + 20 = 60
+Number of values n = 5
+Mean = 60 / 5 = 12
+
+Explanation:
+The mean gives a central value for the data set. It is sensitive to extreme values (outliers), so one very large or very small value can affect it.
+
+2) Median
+Definition:
+The median is the middle value of an ordered data set. If the number of values is even, the median is the average of the two middle values.
+
+Steps:
+- Arrange data in ascending order.
+- If n is odd, the median is the middle value.
+- If n is even, the median is the average of the two middle values.
+
+Solved Example 1 (odd count):
+Data: 7, 2, 11, 5, 9
+Ordered: 2, 5, 7, 9, 11
+Middle value = 7
+Median = 7
+
+Solved Example 2 (even count):
+Data: 4, 10, 6, 2
+Ordered: 2, 4, 6, 10
+Middle two values = 4 and 6
+Median = (4 + 6) / 2 = 5
+
+Explanation:
+The median is useful when the data contain outliers or a skewed distribution because it depends only on the middle position, not on all values.
+
+3) Mode
+Definition:
+The mode is the value that appears most frequently in a data set. A data set may have one mode, more than one mode, or no mode.
+
+Solved Example 1 (single mode):
+Data: 3, 5, 3, 8, 3, 10, 5
+Frequencies: 3 appears 3 times, 5 appears 2 times, 8 appears 1 time, 10 appears 1 time
+Mode = 3
+
+Solved Example 2 (no mode):
+Data: 1, 2, 3, 4, 5
+Each value appears once
+Mode = none
+
+Solved Example 3 (bimodal):
+Data: 2, 4, 4, 6, 6, 8
+Frequencies: 4 and 6 both appear twice
+Modes = 4 and 6
+
+Explanation:
+The mode identifies the most common value(s) in the data. It works for categorical and numeric data and is not affected by extreme values.
+
+Comparison Summary:
+- Mean: uses all values and gives an average; best for symmetric distributions.
+- Median: middle value; best for skewed distributions or outliers.
+- Mode: most frequent value; best for categorical data or identifying common values.

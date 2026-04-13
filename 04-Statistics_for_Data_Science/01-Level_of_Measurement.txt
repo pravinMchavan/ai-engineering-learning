@@ -1,0 +1,60 @@
+Level of Measurement
+
+Definition:
+The level of measurement describes how data values are classified, ordered, and measured. It tells us what mathematical operations and statistical methods are appropriate for the data.
+
+Explanation:
+There are four standard levels of measurement: nominal, ordinal, interval, and ratio. Each level has increasingly stronger properties:
+- Nominal: categories only, no natural order.
+- Ordinal: categories with meaningful order, but intervals are not equal.
+- Interval: ordered values with equal intervals, but no true zero.
+- Ratio: ordered values with equal intervals and a true zero point.
+
+Examples:
+- Nominal: colors of cars (red, blue, green), blood type (A, B, AB, O)
+- Ordinal: education level (high school, bachelor, master, doctorate), customer satisfaction (poor, fair, good, excellent)
+- Interval: temperature in Celsius or Fahrenheit, calendar years
+- Ratio: weight, height, income, distance
+
+Types of Data
+
+1) Qualitative Data (Categorical Data)
+Definition:
+Qualitative data describe qualities or characteristics and are expressed as categories rather than numbers.
+
+Explanation:
+Qualitative data represent labels or names that identify attributes of objects or people. This type of data cannot be meaningfully added or averaged, but it can be counted and classified.
+
+Subtypes:
+- Nominal Data: categories with no natural order
+  * Example: eye color (brown, blue, green)
+  * Example: type of car (sedan, SUV, truck)
+- Ordinal Data: categories with a meaningful order
+  * Example: clothing sizes (small, medium, large)
+  * Example: survey ratings (strongly disagree, disagree, neutral, agree, strongly agree)
+
+Examples:
+- Gender (male, female, non-binary)
+- Marital status (single, married, divorced)
+- Product categories (electronics, furniture, clothing)
+
+2) Quantitative Data (Numerical Data)
+Definition:
+Quantitative data represent measurable quantities and are expressed using numbers.
+
+Explanation:
+Quantitative data count or measure things and support arithmetic operations such as addition, subtraction, multiplication, and division. They can be used to calculate averages, differences, and other numerical summaries.
+
+Subtypes:
+- Interval Data: numeric values with equal intervals, but no true zero
+  * Example: temperature in Celsius, where zero does not mean “no heat”
+  * Example: year of birth
+- Ratio Data: numeric values with equal intervals and a true zero
+  * Example: weight, where zero means no weight
+  * Example: height, distance, time, income
+
+Examples:
+- Number of students in a class
+- Salary in rupees
+- Age in years
+- Test scores out of 100
