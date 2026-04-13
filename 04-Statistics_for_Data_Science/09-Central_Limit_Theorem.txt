@@ -1,0 +1,30 @@
+Central Limit Theorem
+
+Definition:
+The Central Limit Theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the shape of the original population distribution.
+
+Statement:
+If X1, X2, ..., Xn are random samples from a population with mean μ and finite variance σ², then the sample mean X̄ has an approximately normal distribution with mean μ and variance σ²/n for large n.
+
+Assumptions:
+- Random sampling
+- Independent observations
+- Finite population variance
+- Sample size n ≥ 30 (rule of thumb)
+
+Solved Example:
+Population: Exponential distribution with mean μ = 2
+Sample size n = 50
+Sample mean X̄ ≈ Normal(μ=2, σ/√n)
+For large n, the distribution of sample means is normal.
+
+Explanation:
+The CLT allows us to use normal distribution approximations for inference, even when the population is not normal. It's fundamental for confidence intervals and hypothesis testing.
+
+Text-Based Illustration:
+
+Population Distribution: [*----->] (Exponential)
+Sample Means (n=50):     [  *  ] (Normal)
+
+Conclusion:
+The CLT bridges non-normal populations to normal sampling distributions, enabling parametric statistics.
