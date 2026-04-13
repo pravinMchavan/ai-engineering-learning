@@ -1,0 +1,40 @@
+Binomial Distribution
+
+Definition:
+The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials, where each trial has the same probability of success.
+
+Formula:
+P(X = k) = C(n, k) × p^k × (1-p)^(n-k)
+
+Where:
+- n = number of trials
+- k = number of successes
+- p = probability of success on each trial
+- C(n, k) = binomial coefficient = n! / (k! × (n-k)!)
+
+Solved Example:
+n = 5 trials, p = 0.5 (fair coin)
+P(X = 3) = C(5,3) × 0.5^3 × 0.5^(5-3) = 10 × 0.125 × 0.25 = 0.3125
+
+Explanation:
+The binomial distribution is discrete and symmetric when p=0.5. It's used for scenarios like coin flips or quality control.
+
+Poisson Distribution
+
+Definition:
+The Poisson distribution models the number of events occurring in a fixed interval of time or space, where events happen at a constant average rate and independently.
+
+Formula:
+P(X = k) = (e^{-λ} × λ^k) / k!
+
+Where:
+- λ = average number of events per interval
+- k = number of events
+- e = Euler's number (≈2.718)
+
+Solved Example:
+λ = 2 (average 2 calls per hour)
+P(X = 3) = (e^{-2} × 2^3) / 3! = (0.1353 × 8) / 6 ≈ 1.0824 / 6 ≈ 0.1804
+
+Explanation:
+The Poisson distribution is discrete and right-skewed for small λ. It's used for rare events like phone calls or accidents.
