@@ -23,12 +23,14 @@ Definition:
 Qualitative data describe qualities or characteristics and are expressed as categories rather than numbers.
 
 Explanation:
-Qualitative data represent labels or names that identify attributes of objects or people. This type of data cannot be meaningfully added or averaged, but it can be counted and classified.
+Qualitative data represent labels or names that identify attributes of objects or people. 
+This type of data cannot be meaningfully added or averaged, but it can be counted and classified.
 
 Subtypes:
 - Nominal Data: categories with no natural order
   * Example: eye color (brown, blue, green)
   * Example: type of car (sedan, SUV, truck)
+
 - Ordinal Data: categories with a meaningful order
   * Example: clothing sizes (small, medium, large)
   * Example: survey ratings (strongly disagree, disagree, neutral, agree, strongly agree)
@@ -47,8 +49,9 @@ Quantitative data count or measure things and support arithmetic operations such
 
 Subtypes:
 - Interval Data: numeric values with equal intervals, but no true zero
-  * Example: temperature in Celsius, where zero does not mean “no heat”
+  * Example: temperature in Celsius, where zero does not mean ï¿½no heatï¿½
   * Example: year of birth
+
 - Ratio Data: numeric values with equal intervals and a true zero
   * Example: weight, where zero means no weight
   * Example: height, distance, time, income
@@ -58,3 +61,4 @@ Examples:
 - Salary in rupees
 - Age in years
 - Test scores out of 100
+

@@ -4,8 +4,9 @@ Mean, Median, and Mode
 Definition:
 The mean is the arithmetic average of a data set. It is found by adding all values and dividing by the number of values.
 
-Formula:
+Formula:   
 Mean (\bar{x}) = (x_1 + x_2 + ... + x_n) / n
+
 
 Solved Example:
 Data: 5, 8, 12, 15, 20
