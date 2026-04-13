@@ -1,0 +1,112 @@
+﻿Variance
+
+Definition:
+Variance measures the spread or dispersion of data points around the mean. It quantifies how much the values in a data set vary from the average.
+
+Formula:
+For a population: σ² = Σ(xi - μ)² / N
+For a sample: s² = Σ(xi - x̄)² / (n - 1)
+
+Where:
+- xi = each data point
+- μ = population mean
+- x̄ = sample mean
+- N = population size
+- n = sample size
+
+Solved Example:
+Data: 5, 8, 12, 15, 20
+Mean (x̄) = (5+8+12+15+20)/5 = 60/5 = 12
+
+Variance calculation:
+(5-12)² = 49
+(8-12)² = 16
+(12-12)² = 0
+(15-12)² = 9
+(20-12)² = 64
+Sum of squared differences = 49 + 16 + 0 + 9 + 64 = 138
+Variance = 138 / (5-1) = 138/4 = 34.5
+
+Explanation:
+Variance shows how spread out the data are. A higher variance means data points are more spread out from the mean. It is the average of the squared differences from the mean.
+
+Standard Deviation
+
+Definition:
+Standard deviation measures the amount of variation or dispersion in a data set. It is the square root of the variance, and it expresses variability in the same units as the data.
+
+Formula:
+For a population: σ = √(Σ(xi - μ)² / N)
+For a sample: s = √(Σ(xi - x̄)² / (n - 1))
+
+Where:
+- xi = each data point
+- μ = population mean
+- x̄ = sample mean
+- N = population size
+- n = sample size
+
+Solved Example:
+Data: 5, 8, 12, 15, 20
+Mean (x̄) = 12
+Variance = 34.5
+Standard deviation = √34.5 ≈ 5.87
+
+Explanation:
+Standard deviation describes how spread out the values are around the mean. A smaller standard deviation means the values are closer to the mean, while a larger standard deviation indicates more spread.
+
+Coefficient of Variation
+
+Definition:
+Coefficient of Variation (CV) is a normalized measure of dispersion of a probability distribution or frequency distribution. It shows the size of the standard deviation relative to the mean.
+
+Formula:
+CV = (Standard Deviation / Mean) × 100%
+
+Where:
+- Standard Deviation = σ or s
+- Mean = μ or x̄
+
+Solved Example:
+Data: 5, 8, 12, 15, 20
+Mean (x̄) = 12
+Standard deviation ≈ 5.87
+CV = (5.87 / 12) × 100% ≈ 48.9%
+
+Explanation:
+The coefficient of variation allows comparison of variability between data sets with different units or different means. A higher CV means greater relative variability, while a lower CV means more consistency relative to the mean.
+
+Covariance
+
+Definition:
+Covariance measures how much two random variables change together. A positive covariance indicates that the variables tend to increase or decrease together, while a negative covariance indicates that one variable tends to increase when the other decreases.
+
+Formula:
+For population: Cov(X, Y) = Σ[(xi - μx)(yi - μy)] / N
+For sample: Cov(X, Y) = Σ[(xi - x̄)(yi - ȳ)] / (n - 1)
+
+Where:
+- xi and yi = data points for variables X and Y
+- μx, μy = population means of X and Y
+- x̄, ȳ = sample means of X and Y
+- N = population size
+- n = sample size
+
+Solved Example:
+X: 2, 4, 6
+Y: 3, 5, 7
+Mean of X = (2+4+6)/3 = 4
+Mean of Y = (3+5+7)/3 = 5
+
+Covariance calculation:
+(2-4)(3-5) = 4
+(4-4)(5-5) = 0
+(6-4)(7-5) = 4
+Sum = 4 + 0 + 4 = 8
+Population Cov(X, Y) = 8 / 3 ≈ 2.67
+
+Explanation:
+Covariance shows the direction of the linear relationship between two variables. 
+Positive covariance means the variables move together, 
+negative covariance means they move in opposite directions, 
+and zero covariance means no linear relationship.

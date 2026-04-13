@@ -1,4 +1,4 @@
-Random Variable
+﻿Random Variable
 
 Definition:
 A random variable is a function that assigns a numerical value to each possible outcome of a random experiment.
@@ -31,21 +31,22 @@ P(E) = number of favorable outcomes / total number of possible outcomes
 Solved Example 1:
 Problem: What is the probability of rolling a 4 on a fair six-sided die?
 Solution: favorable outcome = {4}, total outcomes = {1,2,3,4,5,6}
-P(rolling 4) = 1 / 6 � 0.1667
+P(rolling 4) = 1 / 6 ≈ 0.1667
 
 Solved Example 2:
 Problem: What is the probability of drawing an Ace from a standard 52-card deck?
 Solution: favorable outcomes = 4 Aces, total outcomes = 52 cards
-P(drawing an Ace) = 4 / 52 = 1 / 13 � 0.0769
+P(drawing an Ace) = 4 / 52 = 1 / 13 ≈ 0.0769
 
 Key Probability Rules:
-- 0 = P(E) = 1
+- 0 ≤ P(E) ≤ 1
 - P(Sample Space) = 1
 - P(Not E) = 1 - P(E)
 
 Relationship to Random Variables:
 - A random variable has a probability distribution that gives probabilities for each possible value.
 - For a discrete random variable X, P(X = x) is the probability that X takes the value x.
+
 Probability Distribution Types
 
 1) Discrete Probability Distribution
@@ -57,7 +58,7 @@ Function:
 - Notation: P(X = x) = f(x)
 
 Properties:
-- f(x) = 0 for all x
+- f(x) ≥ 0 for all x
 - The sum of f(x) over all possible values equals 1
 
 Example:
@@ -69,10 +70,10 @@ A continuous probability distribution describes the probabilities of outcomes fo
 
 Function:
 - Probability Density Function (PDF): describes the relative likelihood of a continuous random variable taking a value.
-- Notation: f(x) and probability over an interval is P(a = X = b) = ?_a^b f(x) dx
+- Notation: f(x) and probability over an interval is P(a ≤ X ≤ b) = ∫_a^b f(x) dx
 
 Properties:
-- f(x) = 0 for all x
+- f(x) ≥ 0 for all x
 - The total area under f(x) over all values equals 1
 - For a specific value x, P(X = x) = 0; probabilities are defined for intervals instead.
 
@@ -86,6 +87,7 @@ If heights are modeled by a continuous distribution, the PDF gives the relative 
 4) Common Continuous Distributions
 - Uniform distribution: every value in a range is equally likely.
 - Normal distribution: bell-shaped distribution defined by mean and standard deviation.
+
 Empirical Rule
 
 Definition:
@@ -96,15 +98,15 @@ Explanation:
 - It gives approximate percentages of data within 1, 2, and 3 standard deviations of the mean.
 
 Rule:
-- About 68% of values fall within 1 standard deviation of the mean: � � s
-- About 95% of values fall within 2 standard deviations of the mean: � � 2s
-- About 99.7% of values fall within 3 standard deviations of the mean: � � 3s
+- About 68% of values fall within 1 standard deviation of the mean: μ ± σ
+- About 95% of values fall within 2 standard deviations of the mean: μ ± 2σ
+- About 99.7% of values fall within 3 standard deviations of the mean: μ ± 3σ
 
 Solved Example:
-Suppose test scores are normally distributed with mean � = 80 and standard deviation s = 5.
-- 68% range: 80 � 5 ? 75 to 85
-- 95% range: 80 � 10 ? 70 to 90
-- 99.7% range: 80 � 15 ? 65 to 95
+Suppose test scores are normally distributed with mean μ = 80 and standard deviation σ = 5.
+- 68% range: 80 ± 5 → 75 to 85
+- 95% range: 80 ± 10 → 70 to 90
+- 99.7% range: 80 ± 15 → 65 to 95
 
 Interpretation:
 This means about 68% of students score between 75 and 85, about 95% score between 70 and 90, and about 99.7% score between 65 and 95.
