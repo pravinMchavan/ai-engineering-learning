@@ -1,0 +1,34 @@
+Confidence Interval
+
+Definition:
+A confidence interval is a range of values that is likely to contain the true population parameter with a certain level of confidence.
+
+Formula for Population Mean (σ known):
+CI = X̄ ± Z × (σ / √n)
+
+Where:
+- X̄ = sample mean
+- Z = Z-score for confidence level (e.g., 1.96 for 95%)
+- σ = population standard deviation
+- n = sample size
+
+Formula for Population Mean (σ unknown):
+CI = X̄ ± t × (s / √n)
+
+Where:
+- t = t-score from t-distribution
+- s = sample standard deviation
+
+Solved Example:
+Sample mean X̄ = 50, σ = 10, n = 100, 95% confidence
+Z = 1.96
+CI = 50 ± 1.96 × (10 / √100) = 50 ± 1.96 × 1 = 50 ± 1.96
+So, 48.04 to 51.96
+
+Explanation:
+A 95% confidence interval means that if we repeated the sampling many times, 95% of the intervals would contain the true mean. It does not mean the probability that the true mean is in this interval is 95%.
+
+Interpretation:
+- Wider intervals indicate more uncertainty.
+- Higher confidence levels result in wider intervals.
+- Confidence intervals are used for estimation and hypothesis testing.
