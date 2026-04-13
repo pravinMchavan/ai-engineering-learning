@@ -1,0 +1,30 @@
+Variance
+
+Definition:
+Variance measures the spread or dispersion of data points around the mean. It quantifies how much the values in a data set vary from the average.
+
+Formula:
+For a population: s� = S(xi - �)� / N
+For a sample: s� = S(xi - x�)� / (n - 1)
+
+Where:
+- xi = each data point
+- � = population mean
+- x� = sample mean
+- N = population size
+- n = sample size
+
+Solved Example:
+Data: 5, 8, 12, 15, 20
+Mean (x�) = (5+8+12+15+20)/5 = 60/5 = 12
+Variance calculation:
+(5-12)� = 49
+(8-12)� = 16
+(12-12)� = 0
+(15-12)� = 9
+(20-12)� = 64
+Sum of squared differences = 49+16+0+9+64 = 138
+Variance = 138 / (5-1) = 138/4 = 34.5
+
+Explanation:
+Variance shows how spread out the data are. A higher variance means data points are more spread out from the mean. It is the average of the squared differences from the mean.
