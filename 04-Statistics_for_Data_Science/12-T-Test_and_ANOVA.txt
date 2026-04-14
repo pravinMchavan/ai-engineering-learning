@@ -1,0 +1,756 @@
+=====================================================
+T-TEST AND ANOVA - COMPLETE GUIDE
+=====================================================
+
+1. OVERVIEW & COMPARISON
+=====================================================
+
+Purpose: Testing differences between group means
+
+T-TEST:
+- Compares means of 1 or 2 groups
+- Uses t-distribution
+- Suitable for small samples
+- Lower computational complexity
+
+ANOVA (Analysis of Variance):
+- Compares means of 3 or more groups
+- Uses F-distribution
+- Tests if variance between groups is significantly larger than variance within groups
+- More efficient than multiple t-tests (avoids Type I error accumulation)
+
+
+2. T-TEST - DETAILED GUIDE
+=====================================================
+
+2.1 ONE-SAMPLE T-TEST
+─────────────────────
+
+Definition:
+Tests whether a sample mean is significantly different from a known/hypothesized 
+population mean.
+
+Formula:
+t = (x̄ - μ₀) / (s / √n)
+
+Where:
+- x̄ = sample mean
+- μ₀ = hypothesized population mean
+- s = sample standard deviation
+- n = sample size
+
+Test Statistic: t-statistic
+Degrees of Freedom: df = n - 1
+
+Assumptions:
+✓ Data is approximately normally distributed (for small n)
+✓ Observations are independent
+✓ Sample is randomly selected
+
+Decision Rule:
+- If |t_calculated| > t_critical → Reject H₀
+- If |t_calculated| ≤ t_critical → Fail to reject H₀
+
+
+2.2 TWO-SAMPLE T-TEST (Independent Samples)
+─────────────────────────────────────────────
+
+Definition:
+Compares means of two independent groups to test if they are significantly different.
+
+Formula:
+t = (x̄₁ - x̄₂) / √[(s₁²/n₁) + (s₂²/n₂)]
+
+Or (using pooled variance for equal sample sizes/variances):
+t = (x̄₁ - x̄₂) / (sp√(2/n))
+
+Where:
+- sp = pooled standard deviation = √[((n₁-1)s₁² + (n₂-1)s₂²) / (n₁+n₂-2)]
+
+Degrees of Freedom: df = n₁ + n₂ - 2
+
+Types:
+a) Equal Variance Assumption: Use Welch's correction
+b) Unequal Variance: Use Welch's t-test
+
+Assumptions:
+✓ Both samples approximately normally distributed
+✓ Samples are independent
+✓ Population variances are equal (or use Welch correction)
+✓ Both samples randomly selected
+
+Use Cases:
+- Compare treatment vs control group
+- Compare performance of two methods
+- A/B testing
+
+
+2.3 PAIRED T-TEST (Dependent Samples)
+──────────────────────────────────────
+
+Definition:
+Compares means of the same group measured at two different times or conditions.
+Also used for matched pairs design.
+
+Formula:
+t = d̄ / (sd / √n)
+
+Where:
+- d̄ = mean of differences
+- sd = standard deviation of differences
+- n = number of pairs
+
+Degrees of Freedom: df = n - 1
+
+Assumptions:
+✓ Differences are approximately normally distributed
+✓ Differences are independent
+✓ Pairs are randomly selected
+
+Use Cases:
+- Before-and-after measurements
+- Twin/sibling comparisons
+- Matched subjects design
+- Repeated measures on same subjects
+
+
+2.4 POOLED VS WELCH'S T-TEST
+─────────────────────────────
+
+Pooled T-Test:
+- Assumes equal population variances
+- Uses pooled variance in denominator
+- More powerful if equal variance assumption is true
+- Less robust if variances are unequal
+
+Welch's T-Test:
+- Does NOT assume equal population variances
+- Adjusts degrees of freedom (usually smaller)
+- More conservative (wider confidence intervals)
+- More robust to unequal variances
+- Generally recommended for modern practice
+
+
+3. EFFECT SIZE IN T-TESTS
+=====================================================
+
+Why Effect Size Matters:
+- p-value depends on sample size (large n → small p-value even for tiny differences)
+- Effect size measures practical significance independent of sample size
+
+Cohen's d (for t-tests):
+d = (x̄₁ - x̄₂) / sp
+
+Where sp = pooled standard deviation
+
+Interpretation:
+- d = 0.2: Small effect
+- d = 0.5: Medium effect
+- d = 0.8: Large effect
+
+Confidence Interval for Effect Size:
+- Provides range of plausible effect sizes
+- Should be reported alongside p-value
+
+
+4. ANOVA - DETAILED GUIDE
+=====================================================
+
+4.1 ONE-WAY ANOVA
+─────────────────
+
+Definition:
+Tests whether means of three or more independent groups are equal. 
+Compares between-group variance to within-group variance.
+
+Basic Concept:
+- Total Variance = Between-Group Variance + Within-Group Variance
+- If between-group variance is much larger than within-group variance,
+  groups have significantly different means
+
+Formula:
+F = MS_between / MS_within
+
+Where:
+- MS_between = Sum of Squares Between / (k-1)
+- MS_within = Sum of Squares Within / (N-k)
+- k = number of groups
+- N = total number of observations
+
+Degrees of Freedom:
+- df_between = k - 1
+- df_within = N - k
+- df_total = N - 1
+
+Sums of Squares:
+SS_total = Σ(Xi - X̄_grand)²
+SS_between = Σ(n_i(X̄_i - X̄_grand)²)
+SS_within = Σ(Xi - X̄_i)²
+
+Assumptions:
+✓ Independent observations
+✓ All groups approximately normally distributed
+✓ Equal population variances across groups (Homogeneity of Variance)
+✓ Groups are independent
+
+Test for Homogeneity of Variance:
+- Levene's Test: Tests if variances are equal
+- If p < 0.05 in Levene's test: Variances differ (may affect ANOVA validity)
+
+ANOVA Table Format:
+┌─────────────┬─────┬──────┬─────────┬─────────┐
+│ Source      │ SS  │ df   │ MS      │ F       │
+├─────────────┼─────┼──────┼─────────┼─────────┤
+│ Between     │ SSB │ k-1  │ MSB     │ F = ... │
+│ Within      │ SSW │ N-k  │ MSW     │         │
+│ Total       │ SST │ N-1  │         │         │
+└─────────────┴─────┴──────┴─────────┴─────────┘
+
+Decision Rule:
+- If F_calculated > F_critical → Reject H₀ (groups have different means)
+- If F_calculated ≤ F_critical → Fail to reject H₀
+
+
+4.2 POST-HOC TESTS (Multiple Comparisons)
+───────────────────────────────────────────
+
+When ANOVA rejects H₀:
+- We know at least two groups differ significantly
+- But which ones? → Use post-hoc tests for pairwise comparisons
+
+Common Post-Hoc Tests:
+
+a) Tukey's HSD (Honestly Significant Difference)
+   - Most commonly used
+   - Controls Type I error rate
+   - Good for balanced designs
+   - Pairwise comparisons between all groups
+
+b) Scheffé Test
+   - Very conservative
+   - Good for unbalanced designs
+   - Tests any contrast
+
+c) Bonferroni Correction
+   - Simple but conservative
+   - Divides α by number of comparisons
+   - α_adjusted = α / (k(k-1)/2)
+
+d) Duncan's Test
+   - Less conservative than Tukey
+   - Uses ranked groups
+
+e) LSD (Least Significant Difference)
+   - Least conservative
+   - Higher Type I error risk
+   - Use only with few comparisons
+
+Post-hoc Selection Guide:
+- Balanced design + want conservative: Use Tukey's HSD
+- Unbalanced design: Use Scheffé
+- Few comparisons, exploratory: Use Bonferroni or LSD
+- Publication quality: Generally use Tukey's HSD
+
+
+4.3 TWO-WAY ANOVA
+──────────────────
+
+Definition:
+Tests effects of TWO independent categorical variables (factors) on a continuous outcome.
+Tests main effects and interaction effects.
+
+Components:
+a) Main Effect A: Effect of Factor A (across levels of Factor B)
+b) Main Effect B: Effect of Factor B (across levels of Factor A)
+c) Interaction Effect: Whether effect of A depends on level of B
+
+Example:
+- Factor A: Teaching Method (Traditional, Online, Hybrid)
+- Factor B: Student Level (Beginner, Intermediate, Advanced)
+- Outcome: Exam Score
+
+ANOVA Table for Two-Way:
+┌──────────────┬────┬────┬────┬────┐
+│ Source       │ SS │ df │ MS │ F  │
+├──────────────┼────┼────┼────┼────┤
+│ Factor A     │    │ a-1│    │    │
+│ Factor B     │    │ b-1│    │    │
+│ A×B Interact │    │(a-1)(b-1)│ │
+│ Error        │    │...│    │    │
+│ Total        │    │N-1│    │    │
+└──────────────┴────┴────┴────┴────┘
+
+Assumptions:
+✓ Same as one-way ANOVA
+✓ Equal sample sizes in each cell (balanced design)
+✓ Random assignment to factor levels
+
+Interaction Interpretation:
+- No interaction: Effect of A is same at all levels of B
+- Interaction present: Effect of A depends on level of B
+
+
+4.4 EFFECT SIZE IN ANOVA
+─────────────────────────
+
+Eta-squared (η²):
+η² = SS_between / SS_total
+
+Interpretation:
+- Small: η² ≈ 0.01
+- Medium: η² ≈ 0.06
+- Large: η² ≈ 0.14
+
+Omega-squared (ω²):
+- Better estimate of population effect size
+- Accounts for within-group variance
+- ω² = (SS_between - df_between × MS_within) / (SS_total + MS_within)
+
+
+5. EXAMPLES WITH DETAILED CALCULATIONS
+=====================================================
+
+EXAMPLE 1: One-Sample T-Test
+─────────────────────────────
+
+Scenario:
+A factory claims their widgets weigh exactly 500g.
+Quality control tests random sample: n=25, x̄=502g, s=8g, α=0.05
+
+H₀: μ = 500 (factory claim is true)
+H₁: μ ≠ 500 (factory claim is false)
+
+Calculation:
+t = (502 - 500) / (8 / √25)
+t = 2 / (8 / 5)
+t = 2 / 1.6
+t = 1.25
+
+Critical value (df=24, two-tailed, α=0.05): t_critical = ±2.064
+|1.25| < 2.064
+
+Decision: Fail to reject H₀
+
+p-value: p ≈ 0.226 > 0.05
+
+Conclusion: No evidence that widgets significantly differ from 500g.
+The factory claim appears valid.
+
+Effect Size:
+Cohen's d = (502-500) / 8 = 0.25 (small effect)
+
+
+EXAMPLE 2: Two-Sample T-Test (Independent)
+────────────────────────────────────────────
+
+Scenario:
+Compare effectiveness of two training programs
+Program A: n₁=20, x̄₁=85, s₁=10
+Program B: n₂=25, x̄₂=82, s₂=12
+α=0.05
+
+H₀: μ₁ = μ₂ (programs equally effective)
+H₁: μ₁ ≠ μ₂ (programs differ in effectiveness)
+
+Calculate pooled variance:
+sp² = [(20-1)×10² + (25-1)×12²] / (20+25-2)
+sp² = [1900 + 3456] / 43
+sp² = 5356 / 43 = 124.56
+sp = 11.16
+
+Calculate t-statistic:
+t = (85 - 82) / √[(11.16²/20) + (11.16²/25)]
+t = 3 / √[6.23 + 4.98]
+t = 3 / √11.21
+t = 3 / 3.35
+t ≈ 0.896
+
+Degrees of freedom: df = 43
+Critical value (two-tailed, α=0.05): t_critical = ±2.017
+
+Decision: |0.896| < 2.017 → Fail to reject H₀
+
+Conclusion: No significant difference between training programs.
+
+Effect Size:
+d = 3 / 11.16 = 0.27 (small effect)
+
+
+EXAMPLE 3: Paired T-Test
+─────────────────────────
+
+Scenario:
+Before-after weight loss study: n=15 participants, α=0.05
+
+Participant | Before | After | Difference (d)
+1           | 85     | 82    | -3
+2           | 92     | 88    | -4
+3           | 78     | 76    | -2
+... (15 total)
+
+d̄ = -32 / 15 = -2.13
+sd = 1.5 (from calculation)
+n = 15
+
+H₀: μ_d = 0 (no weight loss)
+H₁: μ_d ≠ 0 (weight loss exists)
+
+Calculate t:
+t = -2.13 / (1.5 / √15)
+t = -2.13 / (1.5 / 3.87)
+t = -2.13 / 0.387
+t ≈ -5.51
+
+Degrees of freedom: df = 14
+Critical value (two-tailed, α=0.05): t_critical = ±2.145
+
+Decision: |-5.51| > 2.145 → Reject H₀
+
+p-value: p < 0.001
+
+Conclusion: Significant weight loss observed (p < 0.001).
+The program is effective.
+
+
+EXAMPLE 4: One-Way ANOVA
+─────────────────────────
+
+Scenario:
+Compare student exam scores across 3 teaching methods:
+Traditional: 78, 82, 85, 79, 81 (n₁=5)
+Online: 75, 78, 72, 76, 74 (n₂=5)
+Hybrid: 88, 85, 89, 86, 87 (n₃=5)
+
+Group Means:
+X̄₁ = 81 (Traditional)
+X̄₂ = 75 (Online)
+X̄₃ = 87 (Hybrid)
+X̄_grand = 81
+
+Calculate Sums of Squares:
+
+SS_between = 5[(81-81)² + (75-81)² + (87-81)²]
+           = 5[0 + 36 + 36]
+           = 360
+
+SS_within for each group:
+Traditional: (78-81)² + (82-81)² + (85-81)² + (79-81)² + (81-81)² = 28
+Online: (75-75)² + (78-75)² + (72-75)² + (76-75)² + (74-75)² = 20
+Hybrid: (88-87)² + (85-87)² + (89-87)² + (86-87)² + (87-87)² = 10
+SS_within = 28 + 20 + 10 = 58
+
+SS_total = 360 + 58 = 418
+
+Calculate Mean Squares:
+MS_between = 360 / (3-1) = 180
+MS_within = 58 / (15-3) = 58/12 = 4.83
+
+Calculate F-statistic:
+F = 180 / 4.83 = 37.27
+
+Degrees of freedom: df_between = 2, df_within = 12
+Critical value (α=0.05): F_critical ≈ 3.89
+
+Decision: F=37.27 > F_critical=3.89 → Reject H₀
+
+Conclusion: Teaching methods produce significantly different results (p < 0.001).
+
+Post-hoc test (Tukey's HSD):
+Would identify that Hybrid > Traditional > Online
+
+Effect Size:
+η² = 360 / 418 = 0.86 (very large effect)
+
+
+6. REAL-WORLD STUDY CASES
+=====================================================
+
+CASE STUDY 1: Drug Efficacy - Paired T-Test
+────────────────────────────────────────────
+
+Background:
+Pharmaceutical company tests new hypertension medication
+Measurement: Blood pressure before and after 12 weeks of treatment
+
+Sample: 50 hypertension patients
+Inclusion: Baseline systolic BP 140-180 mmHg
+
+Data:
+Before treatment: mean = 155 mmHg, SD = 12
+After treatment: mean = 138 mmHg, SD = 10
+Mean difference: -17 mmHg
+SD of differences: 8
+
+H₀: μ_after = μ_before (medicine doesn't work)
+H₁: μ_after < μ_before (medicine reduces BP)
+
+Paired t-test:
+t = -17 / (8/√50) = -17 / 1.13 = -15.04
+df = 49
+p-value < 0.001
+
+Results:
+✓ Reject H₀
+✓ Medication significantly reduces blood pressure
+✓ Average reduction: 17 mmHg
+✓ Effect size (Cohen's d): 2.13 (very large)
+
+Clinical Significance:
+✓ 17 mmHg reduction is clinically meaningful
+✓ 92% of patients showed improvement
+✓ FDA Approval: GRANTED
+
+Business Impact:
+- Annual market potential: estimated $500M+ (hypertension market)
+- Manufacturing cost: $5/unit, retail: $50/unit
+
+
+CASE STUDY 2: Marketing Campaign - Two-Sample T-Test
+──────────────────────────────────────────────────────
+
+Background:
+E-commerce company tests new checkout page design
+Measure: Customer spending (conversion value)
+
+Control Group (Old Design): n₁=500
+- Mean purchase: $45.20
+- SD: $18.50
+
+Test Group (New Design): n₂=520
+- Mean purchase: $48.75
+- SD: $19.20
+
+H₀: μ_control = μ_test (no difference in spending)
+H₁: μ_control ≠ μ_test (designs affect spending)
+
+Two-sample t-test:
+t = (45.20 - 48.75) / √[(18.50²/500) + (19.20²/520)]
+t = -3.55 / √[0.685 + 0.707]
+t = -3.55 / 1.18
+t = -3.01
+
+df ≈ 1018
+Critical value: t_critical ≈ 1.96 (α=0.05)
+|−3.01| > 1.96 → Reject H₀
+
+Results:
+✓ New design significantly increases spending (p=0.003)
+✓ Effect size (Cohen's d): 0.19 (small but significant)
+✓ Average increase: $3.55 per customer
+
+Business Impact:
+- 520 customers × $3.55 increase = $1,846 additional revenue
+- Weekly: ~$7,384
+- Annual: ~$384,000 additional revenue
+- Implementation cost: ~$5,000
+- ROI: 7,680% in first year
+
+Decision: Roll out new design to all traffic
+
+
+CASE STUDY 3: Manufacturing Quality - One-Way ANOVA
+────────────────────────────────────────────────────
+
+Background:
+Automobile manufacturer tests quality across 4 assembly plants
+Measure: Defect density (defects per 1000 units)
+
+Plant A: n=25, x̄=2.1, s=0.5
+Plant B: n=25, x̄=3.2, s=0.6
+Plant C: n=25, x̄=2.4, s=0.55
+Plant D: n=25, x̄=2.8, s=0.65
+
+H₀: All plants have equal defect rates
+H₁: Plants have different defect rates
+
+One-way ANOVA:
+Grand mean = (2.1+3.2+2.4+2.8)/4 = 2.625
+
+SS_between = 25[(2.1-2.625)² + (3.2-2.625)² + (2.4-2.625)² + (2.8-2.625)²]
+           = 25[0.275625 + 0.330625 + 0.050625 + 0.030625]
+           = 25[0.6875]
+           = 17.1875
+
+SS_within = (25-1)×(0.5² + 0.6² + 0.55² + 0.65²)
+          = 24×(0.25 + 0.36 + 0.3025 + 0.4225)
+          = 24 × 1.335
+          = 32.04
+
+F = 17.1875/3 / (32.04/96) = 5.73 / 0.334 = 17.15
+
+Critical value (α=0.05, df=3,96): F_critical ≈ 2.70
+17.15 > 2.70 → Reject H₀
+
+Results:
+✓ Plants have significantly different quality levels (p<0.001)
+✓ Effect size (η²): 0.349 (large effect)
+
+Post-hoc Analysis (Tukey's HSD):
+- Plant B significantly worse than others
+- Plant A best performer
+- Plant C and D intermediate
+
+Management Actions:
+1. Investigate Plant B processes (highest defects)
+2. Study Plant A best practices
+3. Implement quality improvements at B
+4. Estimated cost reduction: $200,000/year
+
+
+CASE STUDY 4: Sales Performance - Two-Way ANOVA
+────────────────────────────────────────────────
+
+Background:
+Retail company analyzes sales across regions and quarters
+Factors:
+- Region: North, South, East, West
+- Quarter: Q1, Q2, Q3, Q4
+Outcome: Average sales per store ($1000s)
+
+Sample Design: 3 stores per region per quarter (n=48 total)
+
+Data Summary:
+North: Low in Q1, high in Q4
+South: Consistently high
+East: High in Q2-Q3, low in Q1,Q4
+West: Variable performance
+
+Two-way ANOVA:
+Hypothesis to test:
+H₀ᵣₑgᵢₒₙ: All regions have equal sales
+H₀qᵤₐᵣₜₑᵣ: All quarters have equal sales
+H₀ᵢₙₜₑᵣ: No interaction between region and quarter
+
+Results:
+- Main Effect Region: F=8.42, p<0.001 (significant)
+- Main Effect Quarter: F=12.15, p<0.001 (significant)
+- Interaction: F=3.67, p=0.008 (significant)
+
+Interpretation:
+✓ Regions differ in sales (South > others)
+✓ Quarters differ in sales (Q4 > Q1)
+✓ Interaction: Regional differences vary by quarter
+  - Example: North improves in Q4, East peaks in Q2-Q3
+
+Business Strategy:
+- Allocate more inventory to South year-round
+- Plan holiday stock for North in Q4
+- Prepare seasonal stock for East in Q2-Q3
+- Invest in Q1 promotions to boost weak quarter
+
+
+7. WHEN TO USE EACH TEST
+=====================================================
+
+Choose Based On:
+
+Number of Groups:
+- 1 sample vs. known value → One-Sample T-test
+- 2 independent groups → Two-Sample T-test
+- 2 related groups/repeated measures → Paired T-test
+- 3+ independent groups → One-Way ANOVA
+- 3+ groups with 2 factors → Two-Way ANOVA
+
+Sample Size:
+- Small samples (n<30) → T-tests or ANOVA
+- Large samples (n>100) → Can use Z-test, T-test, or ANOVA
+
+Data Type:
+- Continuous numerical data → T-tests or ANOVA
+- Categorical data → Chi-square test
+- Ordinal data → Kruskal-Wallis (non-parametric)
+
+Distribution:
+- Approximately normal → T-tests or ANOVA (robust with n>25)
+- Heavily skewed → Consider non-parametric alternatives
+- Unknown distribution → Use bootstrap methods
+
+
+8. ASSUMPTIONS & VIOLATIONS
+=====================================================
+
+T-TEST Assumptions:
+1. Independence: Observations are independent
+2. Normality: Data approximately normally distributed
+3. Equal Variance (Welch's relaxes this): σ₁² = σ₂²
+
+Violations & Remedies:
+✗ Violation: Non-normal data
+✓ Remedy: Use Welch's t-test, transformation, or non-parametric test
+
+✗ Violation: Unequal variances
+✓ Remedy: Use Welch's t-test (recommended by default)
+
+✗ Violation: Dependent observations
+✓ Remedy: Use paired t-test or repeated measures ANOVA
+
+ANOVA Assumptions:
+1. Independence: Observations independent
+2. Normality: Each group approximately normal
+3. Homogeneity of Variance: Equal variances across groups
+4. Balanced Design: Preferred (equal subsample sizes)
+
+Testing Assumptions:
+- Normality: Shapiro-Wilk test, Q-Q plots
+- Homogeneity: Levene's test, Bartlett's test
+- Independence: Experimental design review
+
+ANOVA Robustness:
+✓ Fairly robust to non-normality if n>25 per group
+✓ More sensitive to unequal variances (use Welch's ANOVA)
+✓ With extreme violations: Use non-parametric Kruskal-Wallis test
+
+
+9. POWER ANALYSIS & SAMPLE SIZE
+=====================================================
+
+Power Definitions:
+- Power = 1 - β (probability of correctly rejecting false H₀)
+- Typical target: Power = 0.80 (80%)
+
+Factors Affecting Power:
+1. Effect Size (larger → more power)
+2. Sample Size (larger → more power)
+3. Significance Level (larger α → more power)
+4. Variability (lower → more power)
+
+Sample Size Calculation:
+For t-test (two groups, α=0.05, power=0.80):
+n = 2(Zα + Zβ)² × σ² / d²
+
+For ANOVA (k groups, α=0.05, power=0.80):
+n = 2(Zα + Zβ)² × σ² / (effect size²) × k
+
+Tools: G*Power, R package pwr, Python scipy
+
+
+10. KEY TAKEAWAYS
+=====================================================
+
+T-Tests:
+✓ Use when comparing 1-2 groups
+✓ More powerful than ANOVA for 2 groups
+✓ Assumes normality (robust with n>25)
+✓ Report effect size (Cohen's d) alongside p-value
+✓ Use Welch's t-test by default (relaxes variance equality)
+
+ANOVA:
+✓ Use when comparing 3+ groups (avoids multiple comparison problem)
+✓ Tests whether group means significantly differ
+✓ Post-hoc tests identify specific differences
+✓ Report effect size (η² or ω²) alongside p-value
+✓ Check Levene's test for homogeneity of variance
+
+General:
+✓ Check assumptions before selecting test
+✓ Report confidence intervals, not just p-values
+✓ Large sample size + small effect size may give significant but meaningless result
+✓ Small sample size + large effect size gives powerful results
+✓ Statistical significance ≠ practical significance
+✓ Document decisions and assumptions clearly
+✓ Replicate studies to validate findings
+
+
+=====================================================
+END OF T-TEST AND ANOVA GUIDE
+=====================================================
