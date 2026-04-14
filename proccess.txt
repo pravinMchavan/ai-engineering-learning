@@ -1,0 +1,20 @@
+#-------Python Virtual Environment & Jupyter Setup (VS Code) 🚀
+# 1. Go to project
+cd C:\Pravin\eqfi\ai-engineering-learning
+
+# 2. Create virtual environment
+py -m venv venv
+
+# 3. Activate virtual environment
+venv\Scripts\activate
+
+# 4. Install all requirements
+pip install -r requirements.txt
+
+# 5. Install Jupyter kernel
+pip install ipykernel
+
+# 6. Register kernel
+python -m ipykernel install --user --name=ai-venv --display-name "Python (ai-venv)"
+
+# 7. Open VS Code → Open .ipynb → Select kernel "Python (ai-venv)"
