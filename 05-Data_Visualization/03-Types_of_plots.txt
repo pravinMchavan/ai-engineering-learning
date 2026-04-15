@@ -1,0 +1,95 @@
+# 📊 Data Visualization Plots (One-Line Syntax Guide)
+
+## 🔹 Basic Comparison Plots
+
+**Bar Plot** – Compare values across categories  
+`sns.barplot(x='col1', y='col2', data=df)`
+
+**Count Plot** – Count frequency of categories  
+`sns.countplot(x='col1', data=df)`
+
+---
+
+## 🔹 Distribution Plots
+
+**Histogram** – Shows data distribution  
+`df['col1'].hist()`
+
+**KDE Plot** – Smooth distribution curve  
+`sns.kdeplot(df['col1'])`
+
+**Box Plot** – Detect outliers & spread  
+`sns.boxplot(x='col1', data=df)`
+
+**Violin Plot** – Distribution + density  
+`sns.violinplot(x='col1', data=df)`
+
+---
+
+## 🔹 Relationship Plots
+
+**Scatter Plot** – Relationship between two variables  
+`sns.scatterplot(x='col1', y='col2', data=df)`
+
+**Line Plot** – Trend over data  
+`sns.lineplot(x='col1', y='col2', data=df)`
+
+**Bubble Plot** – Scatter with size dimension  
+`plt.scatter(df['col1'], df['col2'], s=df['size_col'])`
+
+---
+
+## 🔹 Time Series Plots
+
+**Area Plot** – Cumulative trends  
+`df.plot.area()`
+
+**Step Plot** – Step-wise changes  
+`plt.step(df['col1'], df['col2'])`
+
+---
+
+## 🔹 Composition Plots
+
+**Pie Chart** – Parts of a whole  
+`df['col1'].value_counts().plot.pie(autopct='%1.1f%%')`
+
+**Donut Chart** – Pie with hollow center  
+`plt.pie(df['col1'].value_counts(), wedgeprops=dict(width=0.4))`
+
+---
+
+## 🔹 Correlation & Advanced Plots
+
+**Heatmap** – Correlation matrix visualization  
+`sns.heatmap(df.corr(), annot=True)`
+
+**Pair Plot** – Relationships across all variables  
+`sns.pairplot(df)`
+
+**Joint Plot** – Combined scatter + distribution  
+`sns.jointplot(x='col1', y='col2', data=df)`
+
+**Regression Plot** – Linear relationship with fit line  
+`sns.regplot(x='col1', y='col2', data=df)`
+
+---
+
+## 🔹 Categorical Distribution Plots
+
+**Strip Plot** – Scatter for categorical data  
+`sns.stripplot(x='col1', y='col2', data=df)`
+
+**Swarm Plot** – Better spaced categorical scatter  
+`sns.swarmplot(x='col1', y='col2', data=df)`
+
+---
+
+## ⚠️ Notes
+
+- Replace `'col1'`, `'col2'`, `'size_col'` with actual column names  
+- Required imports:
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
