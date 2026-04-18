@@ -120,6 +120,21 @@ EDA = Understand → Clean → Analyze → Prepare Data for ML
 
 2. Data Science Workflow (End-to-End)
 
+👉 Detailed workflow
+
+Problem Definition
+Data Collection
+Data Cleaning
+EDA
+Feature Engineering
+Data Preprocessing
+Model Selection
+Training
+Evaluation
+Hyperparameter Tuning
+Deployment
+Monitoring
+
 Step 1: Problem Understanding
 - Define objective
 - Understand business problem
