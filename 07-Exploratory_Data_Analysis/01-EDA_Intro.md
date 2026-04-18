@@ -1,4 +1,4 @@
-Introduction to EDA (Exploratory Data Analysis) + Workflow
+Introduction to EDA (Exploratory Data Analysis)
 
 1. What is EDA?
 - EDA (Exploratory Data Analysis) is the process of analyzing and understanding a dataset before applying machine learning.
