@@ -84,19 +84,6 @@ This course focuses on practical, real-world AI development, covering everything
 
 ---
 
-## 🔥 Progress Tracker
-
-- [x] Python Basics
-- [x] Git & GitHub
-- [x] LLM Fundamentals
-- [x] Prompt Engineering
-- [x] AI APIs Integration
-- [x] RAG Systems
-- [x] AI Agents
-- [x] Deployment
-
----
-
 ## 🤝 Connect With Me
 
 I am actively learning and building in AI. Feel free to connect or collaborate!
