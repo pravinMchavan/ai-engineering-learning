@@ -58,5 +58,22 @@ insert into posts (posturl, user_id) values
 ('https://audio.com',4),
 ('https://audio.com',1);
 
+select user_id, count(*) from posts group by user_id;
+--Here we are using group by clause to group the records by user_id and count the number of posts for each user_id.
+--output:
+-- user_id | count
+-- --------+------
+--       1 |    4
+--       2 |    1
+--       3 |    1
+--       4 |    2
+
+-- find a user who has posted the maximum number of posts.
+select user_id, count(*) from posts group by user_id order by count(*) desc limit 1;
+--Here we are using order by clause to sort the records by count in descending order and limit
+--output 
+-- user_id | count
+-- --------+------  
+--       1 |    4
 
 
