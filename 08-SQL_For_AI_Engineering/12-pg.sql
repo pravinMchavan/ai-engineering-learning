@@ -12,6 +12,17 @@ select * from students;
 -- output:
 -- sid |     marks      |                     address   
 -- ---+----------------+-------------------------------------
---   1 | {85,90,78}     | {"street": "123 Main St", "city": "Anytown", "state": "CA"}
+--  1 | {85,90,78}     | {"street": "123 Main St", "city": "Anytown", "state": "CA"}
 
+select * from students where78 = any(marks);
+-- output:
+-- sid |     marks      |                     address
+-- ---+----------------+-------------------------------------
+--  1 | {85,90,78}     | {"street": "123
+    Main St", "city": "Anytown", "state": "CA"}
 
+select * from students where address ->> 'city' = 'Anytown';
+-- output:
+-- sid |     marks      |                     address
+-- ---+----------------+-------------------------------------
+--  1 | {85,90,78}     | {"street": "123 Main St", "city": "Anytown", "state": "CA"}
