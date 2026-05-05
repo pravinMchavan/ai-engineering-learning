@@ -45,6 +45,42 @@ Each step moves parameters a bit in the direction that reduces cost.
 
 ---
 
+## Global minimum vs local minimum
+
+- **Global minimum:** the lowest possible cost value (the absolute best point).
+- **Local minimum:** a point that looks “low” compared to nearby points, but there might be an even lower point elsewhere.
+
+### Text graph idea
+
+**Convex bowl (one global minimum)**
+
+```
+Cost
+ ^
+ |        \      /
+ |         \    /
+ |          \  /
+ |           \/   <- global minimum
+ +-----------------> parameter value
+```
+
+**Wavy landscape (can have local minima)**
+
+```
+Cost
+ ^
+ |    \_/\__
+ |  _/      \_
+ |_/          \__
+ +-----------------> parameter value
+	local     global
+	min       min
+```
+
+**Important note for Simple Linear Regression:**
+- With the usual cost (MSE), the cost surface is **convex**, which means there is **only one global minimum** (no “traps” of local minima).
+- So Gradient Descent is mainly about choosing a good learning rate and stopping rule, not escaping local minima.
+
 ## What the “gradient” means
 
 The **gradient** tells you which direction increases the cost the fastest.
