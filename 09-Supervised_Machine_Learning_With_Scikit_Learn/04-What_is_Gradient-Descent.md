@@ -17,6 +17,16 @@ When you pick a slope and intercept, you get predictions → errors → a cost v
 - Bad line → high cost
 - Better line → lower cost
 
+### Cost function (MSE) formula
+
+For $m$ training examples, with prediction $\hat{y}^{(i)}$ and actual $y^{(i)}$:
+
+$$J(w,b) = \frac{1}{2m}\sum_{i=1}^{m}\left(\hat{y}^{(i)} - y^{(i)}\right)^2$$
+
+For simple linear regression:
+
+$$\hat{y}^{(i)} = w x^{(i)} + b$$
+
 Gradient Descent is the method to automatically adjust slope/intercept to reduce cost.
 
 ---
