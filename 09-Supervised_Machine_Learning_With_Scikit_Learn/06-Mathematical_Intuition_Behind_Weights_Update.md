@@ -14,6 +14,12 @@ For one feature $x$ and target $y$:
 
 $$\hat{y}^{(i)} = w x^{(i)} + b$$
 
+Equivalent theta notation (common in ML):
+
+$$\hat{y}^{(i)} = \theta_1 x^{(i)} + \theta_0$$
+
+So $\theta_1 \equiv w$ and $\theta_0 \equiv b$.
+
 Where:
 - $w$ = weight (slope)
 - $b$ = bias (intercept)

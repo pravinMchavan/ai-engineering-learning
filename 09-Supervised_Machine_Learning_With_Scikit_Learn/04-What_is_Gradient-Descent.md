@@ -8,6 +8,12 @@ In our house-price model, we want a line that predicts price from size:
 
 The **intercept** and **slope** are the two numbers we want to learn.
 
+You may also see the same parameters written as:
+
+$$\hat{y} = \theta_0 + \theta_1 x$$
+
+Where $\theta_0$ is intercept and $\theta_1$ is slope.
+
 ---
 
 ## Why we need Gradient Descent
@@ -111,6 +117,10 @@ At each step, update parameters:
 - `intercept = intercept - learning_rate * gradient_wrt_intercept`
 
 You don’t need to derive the gradients right now to understand the workflow.
+
+In compact math notation (for parameters $\theta$ and cost $J$):
+
+$$\theta \leftarrow \theta - \alpha\,\nabla J(\theta)$$
 
 ---
 

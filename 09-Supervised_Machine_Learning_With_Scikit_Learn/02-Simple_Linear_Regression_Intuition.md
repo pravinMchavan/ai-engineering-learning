@@ -8,6 +8,14 @@ This note avoids heavy theory. We’ll use one simple idea:
 
 **Simple Linear Regression** is a supervised learning method that predicts a numeric value (like house price) using **one** input feature (like house size) by fitting a **straight-line relationship** between them.
 
+You will also see it written with theta (parameter) notation:
+
+$$\hat{y} = \theta_0 + \theta_1 x$$
+
+Here:
+- $\theta_0$ = intercept (same idea as `b`)
+- $\theta_1$ = slope/weight (same idea as `w`)
+
 ---
 
 ## What we’re building

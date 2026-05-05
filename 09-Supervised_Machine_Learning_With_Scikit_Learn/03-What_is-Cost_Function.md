@@ -16,6 +16,16 @@ The model training process tries to **minimize** this number.
 	- $e = y - \hat{y}$
 - **Cost:** one number that summarizes all errors
 
+### Notation you will see in ML
+
+For linear regression, parameters are often written as $\theta_0$ (intercept) and $\theta_1$ (slope):
+
+$$\hat{y}^{(i)} = \theta_0 + \theta_1 x^{(i)}$$
+
+A very common cost function is MSE written as $J(\theta_0,\theta_1)$:
+
+$$J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left(\hat{y}^{(i)} - y^{(i)}\right)^2$$
+
 ---
 
 ## Tiny dataset (size → price)
