@@ -174,6 +174,20 @@ Better than ROC when the positive class is rare.
 - **Regression with outliers:** MAE is more robust than RMSE.
 - **Want large errors punished:** RMSE.
 
+### Quick guide (Uniform error vs Outliers)
+Think about how your errors look:
+
+1) **Uniform errors (no big outliers)**
+- Use **MSE/RMSE** (good default; smooth; penalizes larger errors more).
+
+2) **Mild outliers (few larger errors, but not extreme)**
+- Use **RMSE** if you *want* to penalize those bigger errors.
+- Use **MAE** if you *don’t want* outliers to dominate the score.
+
+3) **Serious outliers (extreme values present)**
+- Prefer **MAE** (much more robust than MSE/RMSE).
+- Also consider cleaning/handling outliers (capping/winsorizing) before training/evaluation.
+
 ---
 
 ## 5) Scikit-learn metric functions (names)
