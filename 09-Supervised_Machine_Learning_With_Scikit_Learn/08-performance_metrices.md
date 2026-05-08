@@ -17,6 +17,14 @@ $$
 $$
 **Use when:** you want an error in original units and less sensitivity to outliers than MSE.
 
+**Advantages:**
+- More robust to outliers (errors grow linearly).
+- Easy to interpret (same units as $y$).
+
+**Disadvantages:**
+- Not differentiable at 0 (can be slightly harder for gradient-based optimization).
+- Doesn’t penalize large errors as strongly as MSE.
+
 ### 1.2 MSE (Mean Squared Error)
 **Meaning:** average squared error (penalizes big errors strongly).
 $$
@@ -24,12 +32,28 @@ $$
 $$
 **Use when:** you want to penalize large mistakes more.
 
+**Advantages:**
+- Strongly penalizes large errors (good when big mistakes are costly).
+- Smooth and differentiable (works well with gradient methods).
+
+**Disadvantages:**
+- Very sensitive to outliers.
+- Error is in squared units (less interpretable than MAE/RMSE).
+
 ### 1.3 RMSE (Root Mean Squared Error)
 **Meaning:** square root of MSE (back to original units).
 $$
 \mathrm{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(y^{(i)} - \hat{y}^{(i)}\right)^2}
 $$
 **Use when:** you want MSE-like penalty but interpretable units.
+
+**Advantages:**
+- Same units as $y$ (interpretable).
+- Still penalizes large errors more than small ones.
+
+**Disadvantages:**
+- Sensitive to outliers (because it comes from MSE).
+- Often models are fit by minimizing MSE/SSE; RMSE is usually reported, not optimized directly.
 
 ### 1.4 $R^2$ (Coefficient of Determination)
 Let $\bar{y}$ be the mean of $y$.
@@ -63,6 +87,13 @@ $$
 \mathrm{MAPE} = \frac{100}{n}\sum_{i=1}^{n}\left|\frac{y^{(i)} - \hat{y}^{(i)}}{y^{(i)}}\right|
 $$
 **Warning:** not stable when $y^{(i)} \approx 0$.
+
+**Advantages:**
+- Scale-free (percentage), easy to compare across datasets.
+
+**Disadvantages:**
+- Undefined / unstable when $y$ is 0 or near 0.
+- Can over-penalize errors when true values are small.
 
 ---
 

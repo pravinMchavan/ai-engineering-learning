@@ -58,10 +58,26 @@ $$
 \mathrm{SSE}(\boldsymbol{\beta}) = \sum_{i=1}^{n}\left(y^{(i)} - \hat{y}^{(i)}\right)^2
 $$
 
+**Advantages:**
+- Simple and convex for linear regression (single global minimum).
+- Strongly penalizes large errors.
+
+**Disadvantages:**
+- Depends on dataset size $n$ (bigger $n$ usually means bigger SSE), so it’s harder to compare across datasets.
+- Sensitive to outliers.
+
 ### MSE
 $$
 \mathrm{MSE}(\boldsymbol{\beta}) = \frac{1}{n}\sum_{i=1}^{n}\left(y^{(i)} - \hat{y}^{(i)}\right)^2
 $$
+
+**Advantages:**
+- Normalized by $n$ (easier to compare than SSE).
+- Differentiable and convex (good for gradient descent).
+
+**Disadvantages:**
+- Sensitive to outliers.
+- Error is in squared units (less interpretable).
 
 In matrix form (SSE):
 $$
@@ -165,10 +181,26 @@ $$
 \min_{\boldsymbol{\beta}}\; \frac{1}{n}\|\mathbf{y}-\mathbf{X}\boldsymbol{\beta}\|_2^2 + \lambda\|\boldsymbol{\beta}\|_2^2
 $$
 
+**Advantages:**
+- Reduces overfitting by shrinking coefficients (lower variance).
+- Works well when features are correlated (multicollinearity).
+
+**Disadvantages:**
+- Does not set coefficients exactly to 0 (no automatic feature selection).
+- Adds bias; $\lambda$ must be tuned.
+
 ### Lasso Regression (L1)
 $$
 \min_{\boldsymbol{\beta}}\; \frac{1}{n}\|\mathbf{y}-\mathbf{X}\boldsymbol{\beta}\|_2^2 + \lambda\|\boldsymbol{\beta}\|_1
 $$
+
+**Advantages:**
+- Can set some coefficients to exactly 0 (feature selection).
+- Helps produce simpler, more interpretable models.
+
+**Disadvantages:**
+- Can be unstable when features are strongly correlated (may pick one and drop others).
+- Like Ridge, needs tuning of $\lambda$; can underfit if $\lambda$ is too large.
 
 - Ridge reduces coefficient size (keeps all features).
 - Lasso can push some coefficients to exactly 0 (feature selection).
