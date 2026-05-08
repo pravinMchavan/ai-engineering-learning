@@ -49,7 +49,14 @@ For $p$ features (not counting intercept):
 $$
 \bar{R}^2 = 1 - (1 - R^2)\frac{n-1}{n-p-1}
 $$
-**Use when:** comparing models with different number of features.
+**Meaning:** like $R^2$, but it **penalizes adding extra features**.
+
+**Key points:**
+- $\bar{R}^2$ increases **only if** a new feature improves the model more than expected by chance.
+- $\bar{R}^2 \le R^2$.
+- It can be **negative** for a poor model.
+
+**Use when:** comparing regression models with different number of features.
 
 ### 1.6 MAPE (Mean Absolute Percentage Error)
 $$
